@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/variable.css">
+    <link rel="stylesheet" href="css/menu_lateral.css">
+
+    <!-- Configurações PWA (Android / Padrão Web) -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ff4081">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" type="image/png" href="icons/icon-192.png">
+
+    <!-- Configurações específicas para iOS (Safari / Apple) -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Donuts">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+    <title>P&D Donuts</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/donuts.svg" alt="P&D_Donuts" class="donuts-texto">
+        </div>
+
+        <nav class="navbar">
+            <button class="btn btn-mobile">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul id="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Cardápio</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+            <a href="#" class="btn btn-default"></a>
+        </nav>
+    </header>
+    <div class="container">A</div>
+    <div class="container">B</div>
+    <div class="container">C</div>
+    <div class="container">D</div>
+
+    <div class="container">E</div>
+    <div class="container">F</div>
+    <div class="container">G</div>
+    <div class="container">H</div>
+
+    <div class="container">I</div>
+    <div class="container">J</div>
+    <div class="container">K</div>
+    <div class="container">L</div>
+    
+    <!-- Menu Lateral Oculto -->
+    <nav class="side-menu" id="sideMenu" aria-hidden="true">
+    <button class="close-btn" id="closeBtn" aria-label="Fechar menu">&times;</button>
+    <ul class="menu-links">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#cardapio">Cardápio</a></li>
+        <li><a href="#sobre">Sobre Nós</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#contato">vesao 8</a></li>
+    </ul>
+    </nav>
+
+    <!-- Fundo escuro ao abrir o menu (Overlay) -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Seu Footer -->
+    <footer class="footer">
+    <img src="img/footer.svg" alt="Footer Decorativo" class="footer-img">
+    <img src="img/logo.svg" alt="Abrir menu de navegação" class="donuts-logo" id="openMenuBtn" role="button" tabindex="0">
+    <button type="button">
+        <img src="img/whatsapp2.png" alt="WhatsApp" class="whatsapp">
+    </button>
+    </footer>
+
+    <script src="js/index.js"></script>
+    <script src="js/menu_lateral.js"></script>
+    <!--PWA INSTALAVEL-->
+    <script>
+        if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js')
+            .then((registration) => {
+                console.log('PWA Service Worker registrado com sucesso:', registration.scope);
+            })
+            .catch((error) => {
+                console.error('Falha ao registrar o Service Worker:', error);
+            });
+        });
+        }
+    </script>
+</body>
+
+</html>

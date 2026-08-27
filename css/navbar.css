@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Titan+One&display=swap');
+@import url('../css/index.css');
+@import url('../css/variable.css');
+
+header {
+    background-color: var(--cor-primaria-1);
+    padding: 0 4%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        display: flex;
+        align-items: center;
+
+        .donuts-texto {
+            width: 150px;
+            height: auto;
+            cursor: pointer;
+            display: block;
+        }
+    }
+
+    /* Container dos ícones (Perfil e Sacola) */
+    .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+
+        .header-btn {
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 6px;
+            position: relative;
+            transition: color 0.2s ease, transform 0.15s ease;
+
+            &:active {
+                transform: scale(0.92);
+            }
+
+            &:hover {
+                color: var(--cor-destaque-azul, #ff4081);
+            }
+        }
+
+        /* Contador numérico na Sacola */
+        .cart-badge {
+            position: absolute;
+            top: -2px;
+            right: -6px;
+            background-color: var(--cor-primaria-2, #ff4081);
+            color: var(--cor-secundaria-0, #ffffff);
+            font-size: 0.7rem;
+            font-weight: 800;
+            min-width: 19px;
+            height: 19px;
+            border-radius: 999px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 4px;
+            border: 2px solid var(--cor-primaria-1);
+            pointer-events: none;
+        }
+    }
+}
+
+@media (min-width: 769px) {
+    header {
+        padding: 0 6%;
+        height: 75px;
+
+        .logo .donuts-texto {
+            width: 170px;
+        }
+
+        .header-actions {
+            gap: 1.75rem;
+
+            .header-btn {
+                font-size: 1.55rem;
+            }
+
+            .cart-badge {
+                font-size: 0.75rem;
+                min-width: 21px;
+                height: 21px;
+            }
+        }
+    }
+}

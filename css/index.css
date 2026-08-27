@@ -1,0 +1,48 @@
+    @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Titan+One&display=swap');
+    @import url('../css/variable.css');
+    @import url('../css/navbar.css');
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Lilita One', cursive;
+    }
+    body {
+            background-image: url('../img/fundo.jpeg');
+            background-repeat: repeat;
+            background-size: 350px auto;
+            background-attachment: scroll;
+            height: 200vh;
+            /*background-color: #F7A8C8;*/
+        }
+    
+    .container{
+        margin: 5%;
+        width: 90%;
+        height: 150px;
+        background-color: var(--cor-secundaria-1);
+        box-shadow: 5px 5px 10px var(--cor-secundaria-2);
+        border-radius: 25px;
+    }
+    .donuts-logo {
+            position: absolute;
+            width: 130px;
+            left: 0px;
+            bottom: 10px;
+            position: fixed;
+        }
+
+    .footer .footer-img{
+        width: 100%;
+        bottom: 0;
+        position: fixed;
+    }
+    .whatsapp{
+                position: fixed;
+                width: 70px;
+                bottom: 5%;
+                right: 5%;
+                filter: drop-shadow(5px 5px 10px rgb(0, 0, 0));
+                border:white;
+            }

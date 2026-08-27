@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/variable.css">
+    <link rel="stylesheet" href="css/menu_lateral.css">
+    <link rel="stylesheet" href="css/cards.css">
+
+    <!-- Configurações PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ff4081">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" type="image/png" href="icons/icon-192.png">
+
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Donuts">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+    <title>P&D Donuts</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/donuts.svg" alt="P&D_Donuts" class="donuts-texto" onclick="navigateStore('catalog')" style="cursor: pointer;">
+        </div>
+
+        <!-- Área de Ações do Usuário: Perfil e Sacola -->
+        <div class="header-actions">
+            <!-- Ícone de Perfil (Futuro Cadastro) -->
+            <button class="header-btn" id="profileBtn" type="button" aria-label="Minha Conta" onclick="alert('Área de cadastro em breve!')">
+                <i class="fa-regular fa-user"></i>
+            </button>
+
+            <!-- Ícone da Sacola de Compras com Contador -->
+            <button class="header-btn cart-btn" id="cartHeaderBtn" type="button" aria-label="Ver Sacola" onclick="navigateStore('cart')">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="cart-badge" id="cartCounter">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- CONTAINER PRINCIPAL DA LOJA -->
+    <main class="store-container">
+        <!-- 1. Catálogo de Produtos -->
+        <section id="catalog-view" class="cards-grid"></section>
+
+        <!-- 2. Detalhes do Produto -->
+        <section id="detail-view" class="hidden">
+            <button class="btn-nav-back" onclick="navigateStore('catalog')" type="button">
+                <i class="fa-solid fa-arrow-left"></i> Voltar ao cardápio
+            </button>
+            <article class="detail-card">
+                <div class="detail-img-box">
+                    <img id="detailImg" src="" alt="" />
+                </div>
+                <div class="detail-content">
+                    <span class="card-category" id="detailCategory"></span>
+                    <h1 class="detail-title" id="detailTitle"></h1>
+                    <p class="detail-description" id="detailDesc"></p>
+                    <div class="detail-price-box">
+                        <span class="detail-price" id="detailPrice"></span>
+                        <span class="detail-old-price" id="detailOldPrice"></span>
+                    </div>
+                    <button class="btn-detail-add" id="detailAddBtn" type="button">Adicionar ao Carrinho</button>
+                </div>
+            </article>
+        </section>
+
+        <!-- 3. Carrinho de Compras -->
+        <section id="cart-view" class="hidden">
+            <button class="btn-nav-back" onclick="navigateStore('catalog')" type="button">
+                <i class="fa-solid fa-arrow-left"></i> Continuar Comprando
+            </button>
+            <div class="cart-panel">
+                <h2 class="cart-title">Seu Pedido</h2>
+                <div id="cartList" class="cart-items"></div>
+                <div id="cartSummary" class="cart-summary-box">
+                    <div class="cart-total-row">
+                        <span>Total:</span>
+                        <span id="cartTotal">R$ 0,00</span>
+                    </div>
+                    <button class="btn-checkout" onclick="checkoutWhatsApp()" type="button">
+                        <i class="fa-brands fa-whatsapp"></i> Finalizar pelo WhatsApp
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Menu Lateral Oculto -->
+    <nav class="side-menu" id="sideMenu" aria-hidden="true">
+        <button class="close-btn" id="closeBtn" aria-label="Fechar menu">&times;</button>
+        <ul class="menu-links">
+            <li><a href="#" onclick="navigateStore('catalog')">Início</a></li>
+            <li><a href="#" onclick="navigateStore('catalog')">Cardápio</a></li>
+            <li><a href="#" onclick="navigateStore('cart')">Carrinho</a></li>
+        </ul>
+    </nav>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <img src="img/footer.svg" alt="Footer Decorativo" class="footer-img">
+        <img src="img/logo.svg" alt="Abrir menu de navegação" class="donuts-logo" id="openMenuBtn" role="button" tabindex="0">
+        <button type="button" onclick="navigateStore('cart')">
+            <img src="img/whatsapp2.png" alt="WhatsApp" class="whatsapp">
+        </button>
+    </footer>
+
+    <script src="js/index.js"></script>
+    <script src="js/menu_lateral.js"></script>
+    <script src="js/store.js"></script>
+    
+    <!-- PWA Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                .then((reg) => console.log('SW registrado:', reg.scope))
+                .catch((err) => console.error('Erro SW:', err));
+            });
+        }
+    </script>
+</body>
+</html>

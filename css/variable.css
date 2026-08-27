@@ -1,0 +1,16 @@
+
+        :root {
+        /* Cores Primárias (Tons de Rosa e Fundo) */
+        --cor-primaria-0: #F7A8C8;
+        --cor-primaria-1: #E8438B; 
+        --cor-primaria-2: #A61652; 
+
+        /* Cores Secundárias (Tons de Massa e Marrom do Texto) */
+        --cor-secundaria-0: #FFF6EE;
+        --cor-secundaria-1: #F5BF7E; 
+        --cor-secundaria-2: #3E2419; 
+
+        /* Cores de Destaque / Granulados */
+        --cor-destaque-azul: #4FC3F7;
+        --cor-destaque-amarelo: #FFF176;
+    }
