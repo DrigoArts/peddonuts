@@ -28,5 +28,15 @@
     "image": "img/donut.png",
     "badge": "Novo",
     "description": "Recheio generoso de doce de leite artesanal com cobertura de açúcar de confeiteiro e canela."
+  },
+  {
+    "id": "donut-doce-de-leite",
+    "name": "Donut Recheado Doce de Leite",
+    "category": "Recheados",
+    "price": 14.50,
+    "oldPrice": 16.00,
+    "image": "img/donut.png",
+    "badge": "Novo",
+    "description": "Recheio generoso de doce de leite artesanal com cobertura de açúcar de confeiteiro e canela."
   }
 ]
