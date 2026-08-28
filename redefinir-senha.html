@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Defina uma nova senha para sua conta P&D Donuts.">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/legal.css">
+  <link rel="stylesheet" href="css/recuperacao.css">
+  <title>Redefinir Senha</title>
+</head>
+<body>
+  <main class="legal-page recovery-page">
+    <h1>Redefinir senha</h1>
+    <p>Escolha uma nova senha para recuperar o acesso à sua conta.</p>
+
+    <form class="recovery-form" id="resetPasswordForm">
+      <label for="newPassword">Nova senha</label>
+      <input id="newPassword" name="password" type="password" autocomplete="new-password"
+        required minlength="8" aria-describedby="passwordRequirements">
+      <ul class="password-requirements" id="passwordRequirements" aria-live="polite">
+        <li id="requirementLength">Mínimo de 8 caracteres</li>
+        <li id="requirementUppercase">Pelo menos uma letra maiúscula</li>
+        <li id="requirementLowercase">Pelo menos uma letra minúscula</li>
+        <li id="requirementNumber">Pelo menos um número</li>
+      </ul>
+
+      <label for="newPasswordConfirmation">Confirmar nova senha</label>
+      <input id="newPasswordConfirmation" name="passwordConfirmation" type="password"
+        autocomplete="new-password" required minlength="8" aria-describedby="newPasswordConfirmationError">
+      <p class="recovery-error" id="newPasswordConfirmationError" aria-live="polite"></p>
+
+      <button class="recovery-submit" type="submit">Redefinir senha</button>
+      <p class="recovery-feedback" id="resetFeedback" role="status" aria-live="polite"></p>
+    </form>
+
+    <p class="legal-footer"><a href="recuperar-senha.html">Voltar para recuperação</a> |
+      <a href="index.html">Voltar à loja</a></p>
+  </main>
+  <script src="js/redefinirSenha.js"></script>
+</body>
+</html>

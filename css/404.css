@@ -1,0 +1,64 @@
+.not-found-page {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 2rem 1rem 7rem;
+}
+
+.not-found-card {
+  width: min(100%, 680px);
+  padding: clamp(2rem, 6vw, 4rem);
+  border: 1px solid rgba(166, 22, 82, 0.12);
+  border-radius: var(--raio-xl);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1.25rem 3rem var(--cor-sombra-forte);
+  text-align: center;
+}
+
+.not-found-code {
+  margin-bottom: 0.5rem;
+  color: var(--cor-primaria-1);
+  font-family: 'Titan One', cursive;
+  font-size: clamp(4.5rem, 18vw, 8rem);
+  line-height: 1;
+}
+
+.not-found-card h1 {
+  margin-bottom: 1rem;
+  color: var(--cor-primaria-2);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.not-found-card p {
+  margin: 0 auto 1.5rem;
+  max-width: 45ch;
+  line-height: 1.6;
+}
+
+.not-found-home {
+  display: inline-block;
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--raio-sm);
+  background: var(--cor-primaria-2);
+  color: var(--cor-branco);
+  text-decoration: none;
+  font-weight: 700;
+  transition: background var(--transicao-rapida), transform var(--transicao-rapida);
+}
+
+.not-found-home:hover,
+.not-found-home:focus-visible {
+  background: var(--cor-primaria-1);
+  transform: translateY(-2px);
+}
+
+.not-found-support {
+  margin-top: 1.5rem !important;
+  margin-bottom: 0 !important;
+  font-size: 0.95rem;
+}
+
+.not-found-support a {
+  color: var(--cor-primaria-2);
+  font-weight: 700;
+}

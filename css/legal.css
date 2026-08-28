@@ -13,6 +13,16 @@
   margin-bottom: 1rem;
 }
 
+.legal-page h1 {
+  margin-bottom: 0.35rem;
+}
+
+.legal-updated {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
 .legal-page h2 {
   margin-top: 1.5rem;
   font-size: 1.25rem;
@@ -20,6 +30,19 @@
 
 .legal-page p {
   margin-bottom: 0.8rem;
+}
+
+.legal-page ul {
+  margin: 0 0 1rem 1.25rem;
+  padding-left: 1rem;
+}
+
+.legal-page li {
+  margin-bottom: 0.45rem;
+}
+
+.legal-page a {
+  color: var(--cor-primaria-2);
 }
 
 .legal-footer {

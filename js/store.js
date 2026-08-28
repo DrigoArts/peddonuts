@@ -83,7 +83,6 @@ function openDetails(productId) {
 
   document.getElementById("detailAddBtn").onclick = () => {
     addToCart(prod.id);
-    navigateStore("cart");
   };
 
   navigateStore("detail");

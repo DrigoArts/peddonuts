@@ -1,0 +1,123 @@
+.register-page {
+  max-width: 560px;
+}
+
+.register-form {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.register-form label {
+  font-weight: 700;
+}
+
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #bbb;
+  border-radius: var(--raio-sm);
+  background: var(--cor-branco);
+  font: inherit;
+}
+
+.register-form input:focus {
+  outline: 3px solid rgba(232, 67, 139, 0.25);
+  border-color: var(--cor-primaria-1);
+}
+
+.password-strength {
+  height: 0.45rem;
+  border-radius: var(--raio-round);
+  background: var(--cor-neutro-cinza-meio);
+  overflow: hidden;
+}
+
+.password-strength-bar {
+  display: block;
+  width: 0;
+  height: 100%;
+  transition: width var(--transicao-normal), background var(--transicao-normal);
+}
+
+.password-strength-bar[data-level="weak"] {
+  width: 33%;
+  background: #d32f2f;
+}
+
+.password-strength-bar[data-level="medium"] {
+  width: 66%;
+  background: #ed9b2f;
+}
+
+.password-strength-bar[data-level="strong"] {
+  width: 100%;
+  background: #2e8b57;
+}
+
+.password-strength-label,
+.field-error,
+.form-feedback {
+  font-size: 0.9rem;
+}
+
+.password-strength-label {
+  color: var(--cor-neutro-texto-secundario);
+}
+
+.field-error {
+  min-height: 1.2em;
+  color: #b3261e;
+}
+
+.consent-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-weight: 400;
+}
+
+.consent-label input {
+  flex: 0 0 auto;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.2rem;
+  accent-color: var(--cor-primaria-1);
+}
+
+.register-submit {
+  margin-top: 0.5rem;
+  padding: 0.8rem 1rem;
+  border: 0;
+  border-radius: var(--raio-sm);
+  background: var(--cor-primaria-2);
+  color: var(--cor-branco);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.register-submit:hover {
+  background: var(--cor-primaria-1);
+}
+
+.form-feedback {
+  min-height: 1.3em;
+  margin-top: 0.5rem;
+}
+
+.form-feedback.success {
+  color: #276749;
+}
+
+.form-feedback.error {
+  color: #b3261e;
+}
+
+@media (max-width: 600px) {
+  .register-page {
+    margin: 1rem auto 120px;
+    padding: 1.25rem;
+  }
+}

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/variable.css">
     <link rel="stylesheet" href="css/menu_lateral.css">
     <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/account-deletion-modal.css">
 
     <!-- Configurações PWA -->
     <link rel="manifest" href="manifest.json">
@@ -35,9 +36,9 @@
         <!-- Área de Ações do Usuário: Perfil e Sacola -->
         <div class="header-actions">
             <!-- Ícone de Perfil (Futuro Cadastro) -->
-            <button class="header-btn" id="profileBtn" type="button" aria-label="Minha Conta" onclick="alert('Área de cadastro em breve!')">
+            <a class="header-btn" id="profileBtn" href="cadastro.html" aria-label="Minha Conta">
                 <i class="fa-regular fa-user"></i>
-            </button>
+            </a>
 
             <!-- Ícone da Sacola de Compras com Contador -->
             <button class="header-btn cart-btn" id="cartHeaderBtn" type="button" aria-label="Ver Sacola" onclick="navigateStore('cart')">
@@ -110,6 +111,7 @@
             <li><a href="#" onclick="navigateStore('catalog')">Início</a></li>
             <li><a href="#" onclick="navigateStore('catalog')">Cardápio</a></li>
             <li><a href="#" onclick="navigateStore('cart')">Carrinho</a></li>
+            <li><a href="#" data-open-account-deletion>Excluir conta/dados</a></li>
         </ul>
     </nav>
 
@@ -124,14 +126,42 @@
         </a>
         <div class="legal-footer">
             <a href="privacidade.html">Privacidade</a>
-            <a href="termos.html">Termos</a>
+            <a href="termos-de-uso.html">Termos</a>
             <a data-site-support-email href="mailto:suporte@cliente.com.br">suporte@cliente.com.br</a>
         </div>
     </footer>
 
+    <div class="account-deletion-modal" id="accountDeletionModal" role="dialog"
+        aria-modal="true" aria-labelledby="accountDeletionTitle" hidden>
+        <section class="account-deletion-dialog">
+            <button class="account-deletion-close" type="button" data-close-account-deletion
+                aria-label="Fechar">&times;</button>
+            <h2 id="accountDeletionTitle">Excluir conta e dados</h2>
+            <p class="account-deletion-warning"><strong>Atenção:</strong> esta ação é irreversível.
+                A exclusão removerá os dados da conta e não poderá ser desfeita.</p>
+            <p>Alguns registros poderão ser mantidos por <strong data-deletion-retention-period></strong>
+                quando houver obrigação legal, prevenção a fraudes ou necessidade de exercício de direitos.</p>
+            <p>Para solicitar a exclusão, entre em contato com o DPO pelo e-mail
+                <a data-deletion-dpo-email></a>.</p>
+            <form id="accountDeletionForm">
+                <label for="accountDeletionConfirmation">Digite <strong>EXCLUIR</strong> para confirmar</label>
+                <input id="accountDeletionConfirmation" name="confirmation" type="text"
+                    autocomplete="off" required>
+                <p class="account-deletion-status" id="accountDeletionStatus" aria-live="polite"></p>
+                <div class="account-deletion-actions">
+                    <button class="account-deletion-cancel" type="button"
+                        data-close-account-deletion>Cancelar</button>
+                    <button class="account-deletion-submit" id="accountDeletionSubmit"
+                        type="submit" disabled>Solicitar exclusão</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
     <script src="js/index.js"></script>
     <script src="js/menu_lateral.js"></script>
     <script src="js/store.js"></script>
+    <script type="module" src="js/accountDeletionModal.js"></script>
     
     <!-- PWA Service Worker -->
     <script>

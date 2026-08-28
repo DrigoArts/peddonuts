@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Recupere o acesso à sua conta P&D Donuts.">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/legal.css">
+  <link rel="stylesheet" href="css/recuperacao.css">
+  <title>Recuperar Senha</title>
+</head>
+<body>
+  <main class="legal-page recovery-page">
+    <h1>Recuperar acesso</h1>
+    <p>Informe o e-mail da sua conta e enviaremos as instruções para criar uma nova senha.</p>
+
+    <form class="recovery-form" id="recoveryForm">
+      <label for="recoveryEmail">E-mail</label>
+      <input id="recoveryEmail" name="email" type="email" autocomplete="email"
+        required placeholder="voce@exemplo.com">
+      <button class="recovery-submit" type="submit">Enviar link de recuperação</button>
+      <p class="recovery-feedback" id="recoveryFeedback" role="status" aria-live="polite"></p>
+    </form>
+
+    <p>Não recebeu a mensagem? Entre em contato com o suporte pelo e-mail
+      <a data-support-email></a>.</p>
+    <p class="legal-footer"><a href="cadastro.html">Criar cadastro</a> |
+      <a href="index.html">Voltar à loja</a></p>
+  </main>
+  <script type="module" src="js/recuperarSenha.js"></script>
+</body>
+</html>

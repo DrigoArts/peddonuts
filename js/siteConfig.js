@@ -34,9 +34,25 @@ const applySiteConfig = () => {
   document.querySelectorAll("[data-site-trade-name]").forEach((el) => {
     el.textContent = legal.tradeName;
   });
+  document.querySelectorAll("[data-site-company-name]").forEach((el) => {
+    el.textContent = legal.companyName;
+  });
+  document.querySelectorAll("[data-site-cnpj]").forEach((el) => {
+    el.textContent = legal.cnpj;
+  });
+  document.querySelectorAll("[data-site-address]").forEach((el) => {
+    el.textContent = legal.address.fullAddress;
+  });
+  document.querySelectorAll("[data-site-min-age]").forEach((el) => {
+    el.textContent = legal.minAgeRequirement;
+  });
   document.querySelectorAll("[data-site-support-email]").forEach((el) => {
     el.textContent = contact.supportEmail;
     el.href = `mailto:${contact.supportEmail}`;
+  });
+  document.querySelectorAll("[data-site-dpo-email]").forEach((el) => {
+    el.textContent = contact.dpoEmail;
+    el.href = `mailto:${contact.dpoEmail}`;
   });
   document.querySelectorAll("[data-site-whatsapp]").forEach((el) => {
     el.href = `https://wa.me/${contact.whatsapp}`;

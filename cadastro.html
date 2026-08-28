@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Crie sua conta na P&D Donuts.">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/legal.css">
+  <link rel="stylesheet" href="css/cadastro.css">
+  <title>Cadastro de Usuário</title>
+</head>
+<body>
+  <main class="legal-page register-page">
+    <h1>Crie sua conta</h1>
+    <p>Preencha os dados abaixo para cadastrar seu usuário.</p>
+
+    <form class="register-form" id="registerForm">
+      <label for="name">Nome</label>
+      <input id="name" name="name" type="text" autocomplete="name" required minlength="2">
+      <p class="field-error" aria-hidden="true"></p>
+
+      <label for="email">E-mail</label>
+      <input id="email" name="email" type="email" autocomplete="email" required>
+      <p class="field-error" aria-hidden="true"></p>
+
+      <label for="password">Senha</label>
+      <input id="password" name="password" type="password" autocomplete="new-password"
+        required minlength="8" aria-describedby="passwordStrengthLabel">
+      <div class="password-strength" aria-hidden="true">
+        <span class="password-strength-bar" id="passwordStrengthBar"></span>
+      </div>
+      <p class="password-strength-label" id="passwordStrengthLabel" aria-live="polite">Digite uma senha.</p>
+
+      <label for="passwordConfirmation">Confirmação de Senha</label>
+      <input id="passwordConfirmation" name="passwordConfirmation" type="password"
+        autocomplete="new-password" required minlength="8" aria-describedby="confirmationError">
+      <p class="field-error" id="confirmationError" aria-live="polite"></p>
+
+      <label class="consent-label" for="consent">
+        <input id="consent" name="consent" type="checkbox" required>
+        <span>Li e concordo com os <a href="termos-de-uso.html">Termos de Uso</a> e a
+          <a href="privacidade.html">Política de Privacidade</a>.</span>
+      </label>
+
+      <button class="register-submit" type="submit">Criar cadastro</button>
+      <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
+    </form>
+
+    <p class="legal-footer"><a href="recuperar-senha.html">Esqueci minha senha</a> |
+      <a href="index.html">Voltar à loja</a></p>
+  </main>
+  <script type="module" src="config/siteConfig.js"></script>
+  <script src="js/cadastro.js"></script>
+</body>
+</html>
