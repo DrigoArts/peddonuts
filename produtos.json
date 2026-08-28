@@ -38,5 +38,46 @@
     "image": "img/donut.png",
     "badge": "Novo",
     "description": "Recheio generoso de doce de leite artesanal com cobertura de açúcar de confeiteiro e canela."
+  },
+
+  {
+    "id": "donut-morango",
+    "name": "Donut Glaze Morango",
+    "category": "Tradicional",
+    "price": 9.50,
+    "oldPrice": 12.00,
+    "image": "img/donut (1).png",
+    "badge": "-20%",
+    "description": "Massa artesanal fofinha com cobertura de glacê de morango natural e confeitos crocantes."
+  },
+  {
+    "id": "donut-chocolate",
+    "name": "Donut Choco Belga",
+    "category": "Especial",
+    "price": 12.00,
+    "oldPrice": null,
+    "image": "img/donut (2).png",
+    "badge": "Mais Pedido",
+    "description": "Cobertura cremosa de chocolate meio amargo 54% cacau com raspas de chocolate ao leite."
+  },
+  {
+    "id": "donut-doce-de-leite",
+    "name": "Donut Recheado Doce de Leite",
+    "category": "Recheados",
+    "price": 14.50,
+    "oldPrice": 16.00,
+    "image": "img/donut.png",
+    "badge": "Novo",
+    "description": "Recheio generoso de doce de leite artesanal com cobertura de açúcar de confeiteiro e canela."
+  },
+  {
+    "id": "donut-doce-de-leite",
+    "name": "Donut Recheado Doce de Leite",
+    "category": "Recheados",
+    "price": 14.50,
+    "oldPrice": 16.00,
+    "image": "img/donut.png",
+    "badge": "Novo",
+    "description": "Recheio generoso de doce de leite artesanal com cobertura de açúcar de confeiteiro e canela."
   }
 ]

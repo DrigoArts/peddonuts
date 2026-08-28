@@ -23,6 +23,7 @@
     <link rel="apple-touch-icon" href="icons/icon-192.png">
 
     <title>P&D Donuts</title>
+    <script type="module" src="js/siteConfig.js"></script>
 </head>
 
 <body>
@@ -49,7 +50,15 @@
     <!-- CONTAINER PRINCIPAL DA LOJA -->
     <main class="store-container">
         <!-- 1. Catálogo de Produtos -->
-        <section id="catalog-view" class="cards-grid"></section>
+        <section id="catalog-view" class="cards-grid">
+            <!-- Os cards serão injetados aqui via JavaScript -->
+        </section>
+        
+        <!-- Bloco de Anúncios - AdSense (Entre Produtos) -->
+        <div class="ad-block" id="ad-block-1">
+            <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+            <!-- Seu código AdSense aqui -->
+        </div>
 
         <!-- 2. Detalhes do Produto -->
         <section id="detail-view" class="hidden">
@@ -110,9 +119,14 @@
     <footer class="footer">
         <img src="img/footer.svg" alt="Footer Decorativo" class="footer-img">
         <img src="img/logo.svg" alt="Abrir menu de navegação" class="donuts-logo" id="openMenuBtn" role="button" tabindex="0">
-        <button type="button" onclick="navigateStore('cart')">
+        <a data-site-whatsapp href="https://wa.me/5511999999999" aria-label="Falar pelo WhatsApp">
             <img src="img/whatsapp2.png" alt="WhatsApp" class="whatsapp">
-        </button>
+        </a>
+        <div class="legal-footer">
+            <a href="privacidade.html">Privacidade</a>
+            <a href="termos.html">Termos</a>
+            <a data-site-support-email href="mailto:suporte@cliente.com.br">suporte@cliente.com.br</a>
+        </div>
     </footer>
 
     <script src="js/index.js"></script>

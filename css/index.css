@@ -1,48 +1,192 @@
-    @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Titan+One&display=swap');
-    @import url('../css/variable.css');
-    @import url('../css/navbar.css');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Titan+One&display=swap');
+@import url('../css/variable.css');
+@import url('../css/navbar.css');
 
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Lilita One', cursive;
-    }
-    body {
-            background-image: url('../img/fundo.jpeg');
-            background-repeat: repeat;
-            background-size: 350px auto;
-            background-attachment: scroll;
-            height: 200vh;
-            /*background-color: #F7A8C8;*/
-        }
-    
-    .container{
-        margin: 5%;
-        width: 90%;
-        height: 150px;
-        background-color: var(--cor-secundaria-1);
-        box-shadow: 5px 5px 10px var(--cor-secundaria-2);
-        border-radius: 25px;
-    }
-    .donuts-logo {
-            position: absolute;
-            width: 130px;
-            left: 0px;
-            bottom: 10px;
-            position: fixed;
-        }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lilita One', cursive;
+}
 
-    .footer .footer-img{
-        width: 100%;
-        bottom: 0;
-        position: fixed;
-    }
-    .whatsapp{
-                position: fixed;
-                width: 70px;
-                bottom: 5%;
-                right: 5%;
-                filter: drop-shadow(5px 5px 10px rgb(0, 0, 0));
-                border:white;
-            }
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url('../img/fundo.jpeg');
+  background-repeat: repeat;
+  background-size: 350px auto;
+  background-attachment: fixed;
+  background-color: var(--cor-primaria-0);
+  min-height: 100vh;
+  position: relative;
+  color: var(--cor-neutro-texto-primario);
+}
+
+/* Prevenção de scroll durante modal */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* ========================================
+   COMPONENTES DE LAYOUT
+   ======================================== */
+.container {
+  margin: 5%;
+  width: 90%;
+  min-height: 150px;
+  background: linear-gradient(135deg, var(--cor-secundaria-1), #f5c896);
+  box-shadow: 0 6px 20px var(--cor-sombra-forte);
+  border-radius: var(--raio-xl);
+  padding: var(--espaco-lg);
+  transition: all var(--transicao-normal);
+}
+
+.container:hover {
+  box-shadow: 0 10px 30px var(--cor-sombra-forte);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 50;
+  pointer-events: none;
+}
+
+.footer .legal-footer {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 61;
+  white-space: nowrap;
+  pointer-events: auto;
+  font-family: Arial, sans-serif;
+  font-size: 0.72rem;
+}
+
+.footer .legal-footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 0.3rem;
+}
+
+.footer .footer-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.donuts-logo {
+  position: fixed;
+  width: 100px;
+  left: var(--espaco-md);
+  bottom: 12px;
+  cursor: pointer;
+  z-index: 60;
+  pointer-events: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  transition: all var(--transicao-rapida);
+}
+
+.donuts-logo:active {
+  transform: scale(0.95);
+}
+
+.whatsapp {
+  position: fixed;
+  width: 65px;
+  bottom: 18px;
+  right: var(--espaco-lg);
+  z-index: 60;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+  transition: all var(--transicao-rapida);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.whatsapp:active {
+  transform: scale(0.92);
+}
+
+/* ========================================
+   SCROLLBAR CUSTOMIZADA
+   ======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cor-neutro-cinza-claro);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cor-primaria-1);
+  border-radius: var(--raio-round);
+  transition: background var(--transicao-rapida);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cor-primaria-2);
+}
+
+/* ========================================
+   RESPONSIVE MOBILE
+   ======================================== */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 120px;
+  }
+
+  .donuts-logo {
+    width: 90px;
+    left: 8px;
+    bottom: 16px;
+  }
+
+  .whatsapp {
+    width: 60px;
+    bottom: 20px;
+    right: 12px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE TABLET & DESKTOP
+   ======================================== */
+@media (min-width: 768px) {
+  body {
+    padding-bottom: 100px;
+  }
+
+  .donuts-logo {
+    width: 110px;
+    left: var(--espaco-lg);
+    bottom: 14px;
+  }
+
+  .whatsapp {
+    width: 70px;
+    bottom: 16px;
+    right: var(--espaco-xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .donuts-logo {
+    width: 120px;
+  }
+
+  .whatsapp {
+    width: 75px;
+  }
+}

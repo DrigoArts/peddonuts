@@ -1,25 +1,38 @@
+@import url('../css/variable.css');
 
-
-/* Configuração do Menu Lateral */
+/* ========================================
+   MENU LATERAL (DRAWER)
+   ======================================== */
 .side-menu {
   position: fixed;
   top: 0;
   left: 0;
-  width: 260px;
+  width: 280px;
   height: 100vh;
-  background-color: #ffffff;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(180deg, var(--cor-branco) 0%, var(--cor-neutro-cinza-claro) 100%);
+  box-shadow: 4px 0 20px var(--cor-sombra-forte);
   transform: translateX(-100%);
-  transition: transform 0.3s ease-in-out;
+  transition: transform var(--transicao-normal);
   z-index: 1000;
-  padding: 24px;
+  padding: var(--espaco-lg);
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 /* Estado Aberto */
 .side-menu.active {
   transform: translateX(0);
+}
+
+/* Scrollbar do menu */
+.side-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.side-menu::-webkit-scrollbar-thumb {
+  background: var(--cor-primaria-0);
+  border-radius: var(--raio-round);
 }
 
 /* Botão Fechar */
@@ -28,37 +41,85 @@
   background: none;
   border: none;
   font-size: 32px;
+  color: var(--cor-neutro-texto-primario);
   cursor: pointer;
   line-height: 1;
+  padding: 0;
+  transition: all var(--transicao-rapida);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--raio-md);
+
+  &:active {
+    background: var(--cor-neutro-cinza-meio);
+    transform: scale(0.92);
+  }
 }
 
 /* Lista de Links */
 .menu-links {
   list-style: none;
   padding: 0;
-  margin-top: 32px;
+  margin-top: var(--espaco-xxl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-md);
 }
 
 .menu-links li {
-  margin-bottom: 20px;
+  margin: 0;
 }
 
 .menu-links a {
   text-decoration: none;
-  color: #333333;
-  font-size: 18px;
+  color: var(--cor-neutro-texto-primario);
+  font-size: 1rem;
   font-weight: 600;
+  display: block;
+  padding: var(--espaco-md) var(--espaco-lg);
+  border-radius: var(--raio-md);
+  transition: all var(--transicao-rapida);
+  cursor: pointer;
+  position: relative;
 }
 
-/* Fundo Escurecido (Overlay) */
+.menu-links a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: var(--cor-primaria-1);
+  border-radius: 0 var(--raio-md) var(--raio-md) 0;
+  opacity: 0;
+  transition: opacity var(--transicao-rapida);
+}
+
+.menu-links a:active {
+  background: var(--cor-neutro-cinza-meio);
+  color: var(--cor-primaria-1);
+}
+
+.menu-links a:active::before {
+  opacity: 1;
+}
+
+/* ========================================
+   OVERLAY DO MENU
+   ======================================== */
 .menu-overlay {
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: all var(--transicao-normal);
   z-index: 999;
+  backdrop-filter: blur(2px);
 }
 
 .menu-overlay.active {
@@ -66,7 +127,31 @@
   visibility: visible;
 }
 
-/* Cursor no gatilho */
-.donuts-logo {
-  cursor: pointer;
+/* ========================================
+   RESPONSIVO
+   ======================================== */
+@media (min-width: 768px) {
+  .side-menu {
+    width: 300px;
+    padding: var(--espaco-xl);
+  }
+
+  .menu-links a {
+    font-size: 1.1rem;
+  }
+}
+
+/* Desabilitar menu lateral em desktop grande */
+@media (min-width: 1024px) {
+  .side-menu {
+    display: none;
+  }
+
+  .menu-overlay {
+    display: none;
+  }
+
+  .donuts-logo {
+    display: none;
+  }
 }

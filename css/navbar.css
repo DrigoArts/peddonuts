@@ -1,102 +1,152 @@
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Titan+One&display=swap');
-@import url('../css/index.css');
 @import url('../css/variable.css');
 
 header {
-    background-color: var(--cor-primaria-1);
-    padding: 0 4%;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    width: 100%;
-    height: 70px;
+  background: linear-gradient(135deg, var(--cor-primaria-1), var(--cor-primaria-2));
+  padding: 0 var(--espaco-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px var(--cor-sombra-forte);
+  transition: all var(--transicao-normal);
+
+  .logo {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    flex-shrink: 0;
 
-    .logo {
-        display: flex;
-        align-items: center;
-
-        .donuts-texto {
-            width: 150px;
-            height: auto;
-            cursor: pointer;
-            display: block;
-        }
+    .donuts-texto {
+      width: 140px;
+      height: auto;
+      cursor: pointer;
+      display: block;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+      transition: filter var(--transicao-rapida);
     }
 
-    /* Container dos ícones (Perfil e Sacola) */
-    .header-actions {
-        display: flex;
-        align-items: center;
-        gap: 1.25rem;
-
-        .header-btn {
-            background: transparent;
-            border: none;
-            color: #ffffff;
-            font-size: 1.4rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 6px;
-            position: relative;
-            transition: color 0.2s ease, transform 0.15s ease;
-
-            &:active {
-                transform: scale(0.92);
-            }
-
-            &:hover {
-                color: var(--cor-destaque-azul, #ff4081);
-            }
-        }
-
-        /* Contador numérico na Sacola */
-        .cart-badge {
-            position: absolute;
-            top: -2px;
-            right: -6px;
-            background-color: var(--cor-primaria-2, #ff4081);
-            color: var(--cor-secundaria-0, #ffffff);
-            font-size: 0.7rem;
-            font-weight: 800;
-            min-width: 19px;
-            height: 19px;
-            border-radius: 999px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 4px;
-            border: 2px solid var(--cor-primaria-1);
-            pointer-events: none;
-        }
+    .donuts-texto:active {
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
     }
+  }
+
+  /* Container dos ícones (Perfil e Sacola) */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .header-btn {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: var(--cor-branco);
+      font-size: 1.35rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 10px;
+      position: relative;
+      transition: all var(--transicao-rapida);
+      border-radius: var(--raio-md);
+      backdrop-filter: blur(10px);
+
+      &:active {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(0.92);
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.25);
+      }
+    }
+
+    /* Contador numérico na Sacola */
+    .cart-badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: linear-gradient(135deg, var(--cor-primaria-2), #c41450);
+      color: var(--cor-branco);
+      font-size: 0.65rem;
+      font-weight: 800;
+      min-width: 20px;
+      height: 20px;
+      border-radius: var(--raio-round);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 4px;
+      border: 2px solid var(--cor-branco);
+      pointer-events: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      animation: pulse 0.6s ease-in-out;
+    }
+  }
 }
 
-@media (min-width: 769px) {
-    header {
-        padding: 0 6%;
-        height: 75px;
+/* Animação de pulso para o contador */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
 
-        .logo .donuts-texto {
-            width: 170px;
-        }
+/* ========================================
+   RESPONSIVE: TABLET (768px+)
+   ======================================== */
+@media (min-width: 768px) {
+  header {
+    padding: 0 var(--espaco-lg);
+    height: 75px;
 
-        .header-actions {
-            gap: 1.75rem;
-
-            .header-btn {
-                font-size: 1.55rem;
-            }
-
-            .cart-badge {
-                font-size: 0.75rem;
-                min-width: 21px;
-                height: 21px;
-            }
-        }
+    .logo .donuts-texto {
+      width: 160px;
     }
+
+    .header-actions {
+      gap: 1.3rem;
+
+      .header-btn {
+        font-size: 1.5rem;
+        padding: 10px 12px;
+      }
+
+      .cart-badge {
+        font-size: 0.7rem;
+        min-width: 22px;
+        height: 22px;
+      }
+    }
+  }
+}
+
+/* ========================================
+   RESPONSIVE: DESKTOP (1024px+)
+   ======================================== */
+@media (min-width: 1024px) {
+  header {
+    padding: 0 var(--espaco-xl);
+    height: 80px;
+
+    .logo .donuts-texto {
+      width: 180px;
+    }
+
+    .header-actions {
+      gap: 1.6rem;
+
+      .header-btn {
+        font-size: 1.6rem;
+        padding: 12px 14px;
+      }
+    }
+  }
 }
