@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Página não encontrada.">
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/404.css">
-  <title>Página não encontrada</title>
-</head>
-<body>
-  <main class="not-found-page">
-    <section class="not-found-card" aria-labelledby="notFoundTitle">
-      <div class="not-found-code" aria-hidden="true">404</div>
-      <h1 id="notFoundTitle">Ops! Esta página não foi encontrada.</h1>
-      <p>O endereço que você acessou pode estar incorreto ou a página pode ter sido movida.
-        Vamos levar você de volta para um lugar conhecido.</p>
-      <a class="not-found-home" href="index.html">Voltar para a Home</a>
-      <p class="not-found-support">Se precisar de ajuda, fale com o suporte:
-        <a data-support-email></a>.</p>
-    </section>
-  </main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Página não encontrada" />
+    <meta name="theme-color" content="#E8438B" />
+    <title>404 | P&D Donuts</title>
+    <link rel="icon" type="image/png" href="./icons/icon-192.png" />
+    <link rel="stylesheet" href="./css/variable.css" />
+    <link rel="stylesheet" href="./css/404.css" />
+  </head>
+  <body>
+    <main class="not-found-page" aria-live="polite">
+      <section class="not-found-card" aria-labelledby="not-found-title">
+        <div class="not-found-visual">
+          <img
+            class="not-found-image"
+            src="./img/404-error.svg"
+            alt="Ilustração de página não encontrada"
+          />
+        </div>
 
-  <script type="module" src="js/404.js"></script>
-</body>
+        <div class="not-found-content">
+          <span class="not-found-kicker">Erro 404</span>
+          <h1 class="not-found-title" data-not-found-title>Ops! Página não encontrada</h1>
+          <p class="not-found-message" data-not-found-message>
+            A página que você procurava pode ter sido removida, movida ou nunca existiu.
+          </p>
+
+          <div class="not-found-actions">
+            <a class="primary-button" href="./index.html" data-home-link>Voltar para a Home</a>
+            <a class="secondary-link" href="mailto:suporte@cliente.com.br" data-support-link>
+              Falar com o suporte
+            </a>
+          </div>
+
+          <p class="support-note">
+            Se você acredita que isso seja um erro, contate nosso suporte:
+            <a href="mailto:suporte@cliente.com.br" data-support-email>suporte@cliente.com.br</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./seo.js"></script>
+    <script type="module" src="./js/404.js"></script>
+  </body>
 </html>

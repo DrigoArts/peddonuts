@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /cadastro.html
+Disallow: /login.html
+Disallow: /recuperar-senha.html
+
+Sitemap: https://www.cliente.com.br/sitemap.xml

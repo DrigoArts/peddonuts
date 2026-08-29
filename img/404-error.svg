@@ -1,0 +1,49 @@
+<svg width="720" height="520" viewBox="0 0 720 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="62" y1="41" x2="658" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE7F1"/>
+      <stop offset="1" stop-color="#FFF6EE"/>
+    </linearGradient>
+    <linearGradient id="donut" x1="360" y1="130" x2="360" y2="410" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9C7D9"/>
+      <stop offset="1" stop-color="#E8438B"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="220" y1="140" x2="500" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2A4C3"/>
+      <stop offset="1" stop-color="#A61652"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="720" height="520" rx="36" fill="url(#bg)"/>
+  <circle cx="540" cy="110" r="52" fill="#FDE9B2" opacity="0.9"/>
+  <circle cx="145" cy="120" r="38" fill="#F7A8C8" opacity="0.65"/>
+  <circle cx="610" cy="390" r="46" fill="#C7EBFF" opacity="0.7"/>
+
+  <g opacity="0.55">
+    <path d="M126 394C165 334 202 300 250 274" stroke="#F3B5C9" stroke-width="12" stroke-linecap="round"/>
+    <path d="M517 264C567 298 606 340 630 394" stroke="#F3B5C9" stroke-width="12" stroke-linecap="round"/>
+  </g>
+
+  <g>
+    <circle cx="360" cy="266" r="152" fill="url(#ring)" opacity="0.12"/>
+    <circle cx="360" cy="266" r="122" fill="#FFF9FB"/>
+    <circle cx="360" cy="266" r="88" fill="url(#donut)"/>
+    <circle cx="360" cy="266" r="46" fill="#FFF9FB"/>
+
+    <path d="M314 228C332 211 352 202 374 202C402 202 430 216 447 239C429 219 410 209 388 209C359 209 334 221 314 228Z" fill="#FCE2EE" opacity="0.9"/>
+
+    <g fill="#FFFDFB">
+      <circle cx="324" cy="256" r="11"/>
+      <circle cx="401" cy="256" r="11"/>
+      <path d="M330 309C350 323 371 330 392 330C404 330 415 327 425 322C419 342 404 357 385 365C368 371 349 370 332 361C318 354 306 341 300 325C310 323 320 316 330 309Z"/>
+    </g>
+
+    <path d="M314 210L350 148" stroke="#A61652" stroke-width="14" stroke-linecap="round"/>
+    <path d="M407 210L371 148" stroke="#A61652" stroke-width="14" stroke-linecap="round"/>
+    <path d="M318 186C338 165 348 154 361 141C375 154 385 164 406 186" stroke="#A61652" stroke-width="12" stroke-linecap="round"/>
+  </g>
+
+  <g>
+    <text x="360" y="440" text-anchor="middle" fill="#A61652" font-family="Arial, sans-serif" font-size="92" font-weight="800">404</text>
+  </g>
+</svg>
