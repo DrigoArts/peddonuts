@@ -1,7 +1,11 @@
 /* ======================================================
    ESTRUTURA DO CARROSSEL
    ====================================================== */
-.carrossel {
+body:not(.home-page) .carrossel {
+  display: none !important;
+}
+
+.home-page .carrossel {
   position: relative;
   width: 90%;
   max-width: 1200px;
