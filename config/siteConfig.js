@@ -28,7 +28,7 @@ export const siteConfig = {
     dpoEmail: "privacidade@cliente.com.br",
     commercialEmail: "comercial@cliente.com.br",
     phone: "+55 11 99999-9999",
-    whatsapp: "+5511999999999",
+    whatsapp: "+5511949548219",
     supportHours: "Segunda a Sexta, das 09h às 18h (Horário de Brasília)",
   },
   site: {
