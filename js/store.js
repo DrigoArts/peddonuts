@@ -4,6 +4,7 @@ let cart = [];
 const catalogView = document.getElementById("catalog-view");
 const detailView = document.getElementById("detail-view");
 const cartView = document.getElementById("cart-view");
+const bannerCarrossel = document.getElementById("bannerCarrossel");
 const cartCounter = document.getElementById("cartCounter");
 
 const formatCurrency = (val) =>
@@ -26,6 +27,7 @@ function navigateStore(view) {
   catalogView.classList.add("hidden");
   detailView.classList.add("hidden");
   cartView.classList.add("hidden");
+  bannerCarrossel?.classList.toggle("hidden", view !== "catalog");
 
   if (view === "catalog") {
     catalogView.classList.remove("hidden");
