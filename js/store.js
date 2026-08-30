@@ -5,9 +5,20 @@ const catalogView = document.getElementById("catalog-view");
 const detailView = document.getElementById("detail-view");
 const cartView = document.getElementById("cart-view");
 const cartCounter = document.getElementById("cartCounter");
+const bannerCarrossel = document.getElementById("bannerCarrossel");
 
 const formatCurrency = (val) =>
   val.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+
+function toggleHomeBanner(show) {
+  if (!bannerCarrossel) return;
+
+  if (show) {
+    bannerCarrossel.classList.remove("hidden");
+  } else {
+    bannerCarrossel.classList.add("hidden");
+  }
+}
 
 // Carrega os dados do produtos.json
 async function loadProducts() {
@@ -29,11 +40,14 @@ function navigateStore(view) {
 
   if (view === "catalog") {
     catalogView.classList.remove("hidden");
+    toggleHomeBanner(true);
   } else if (view === "detail") {
     detailView.classList.remove("hidden");
+    toggleHomeBanner(false);
   } else if (view === "cart") {
     renderCart();
     cartView.classList.remove("hidden");
+    toggleHomeBanner(false);
   }
   window.scrollTo(0, 0);
 }

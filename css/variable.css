@@ -1,8 +1,14 @@
 :root {
+  /* Fontes */
+  --font-display: 'Lilita One', 'Trebuchet MS', cursive;
+  --font-body: 'Segoe UI', 'Arial', sans-serif;
+
   /* Cores Primárias (Tons de Rosa e Fundo) */
   --cor-primaria-0: #F7A8C8;
   --cor-primaria-1: #E8438B;
   --cor-primaria-2: #A61652;
+  --cor-rosa-suave: #FFF1F7;
+  --cor-rosa-claro: #FFE8F0;
 
   /* Cores Secundárias (Tons de Massa e Marrom do Texto) */
   --cor-secundaria-0: #FFF6EE;
@@ -22,6 +28,11 @@
   --cor-branco: #ffffff;
   --cor-sombra: rgba(0, 0, 0, 0.08);
   --cor-sombra-forte: rgba(0, 0, 0, 0.12);
+
+  /* Superfícies */
+  --cor-fundo: #fffafc;
+  --cor-card: rgba(255, 255, 255, 0.96);
+  --cor-card-escura: #fff0f5;
 
   /* Transições */
   --transicao-rapida: 0.15s ease;

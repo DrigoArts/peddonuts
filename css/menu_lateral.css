@@ -7,66 +7,64 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 280px;
+  width: 290px;
   height: 100vh;
-  background: linear-gradient(180deg, var(--cor-branco) 0%, var(--cor-neutro-cinza-claro) 100%);
-  box-shadow: 4px 0 20px var(--cor-sombra-forte);
+  background: linear-gradient(180deg, #fff9fb 0%, #fff0f5 100%);
+  box-shadow: 0 24px 48px rgba(166, 22, 82, 0.18);
   transform: translateX(-100%);
-  transition: transform var(--transicao-normal);
+  transition: transform var(--transicao-normal), box-shadow var(--transicao-normal);
   z-index: 1000;
-  padding: var(--espaco-lg);
+  padding: 1.1rem 1rem 1.5rem;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  border-right: 1px solid rgba(232, 67, 139, 0.12);
 }
 
-/* Estado Aberto */
 .side-menu.active {
   transform: translateX(0);
+  box-shadow: 0 26px 60px rgba(166, 22, 82, 0.22);
 }
 
-/* Scrollbar do menu */
 .side-menu::-webkit-scrollbar {
   width: 6px;
 }
 
 .side-menu::-webkit-scrollbar-thumb {
-  background: var(--cor-primaria-0);
+  background: rgba(232, 67, 139, 0.4);
   border-radius: var(--raio-round);
 }
 
-/* Botão Fechar */
 .close-btn {
   align-self: flex-end;
-  background: none;
+  background: rgba(232, 67, 139, 0.08);
   border: none;
-  font-size: 32px;
+  font-size: 2rem;
   color: var(--cor-neutro-texto-primario);
   cursor: pointer;
   line-height: 1;
   padding: 0;
   transition: all var(--transicao-rapida);
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--raio-md);
-
-  &:active {
-    background: var(--cor-neutro-cinza-meio);
-    transform: scale(0.92);
-  }
+  border-radius: 50%;
 }
 
-/* Lista de Links */
+.close-btn:active {
+  background: rgba(232, 67, 139, 0.14);
+  transform: scale(0.94);
+}
+
 .menu-links {
   list-style: none;
   padding: 0;
-  margin-top: var(--espaco-xxl);
+  margin-top: 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: var(--espaco-md);
+  gap: 0.75rem;
 }
 
 .menu-links li {
@@ -75,46 +73,51 @@
 
 .menu-links a {
   text-decoration: none;
-  color: var(--cor-neutro-texto-primario);
-  font-size: 1rem;
-  font-weight: 600;
-  display: block;
-  padding: var(--espaco-md) var(--espaco-lg);
-  border-radius: var(--raio-md);
+  color: #000000;
+  font-size: 1.05rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  padding: 0.95rem 1rem;
+  border-radius: 1rem;
   transition: all var(--transicao-rapida);
   cursor: pointer;
   position: relative;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid transparent;
 }
 
 .menu-links a::before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 3px;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 18px;
+  border-radius: 999px;
   background: var(--cor-primaria-1);
-  border-radius: 0 var(--raio-md) var(--raio-md) 0;
   opacity: 0;
   transition: opacity var(--transicao-rapida);
 }
 
+.menu-links a:hover,
 .menu-links a:active {
-  background: var(--cor-neutro-cinza-meio);
-  color: var(--cor-primaria-1);
+  background: linear-gradient(135deg, rgba(232, 67, 139, 0.1), rgba(255, 255, 255, 0.95));
+  color: var(--cor-primaria-2);
+  border-color: rgba(232, 67, 139, 0.12);
+  padding-left: 1.4rem;
 }
 
+.menu-links a:hover::before,
 .menu-links a:active::before {
   opacity: 1;
 }
 
-/* ========================================
-   OVERLAY DO MENU
-   ======================================== */
 .menu-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: rgba(34, 30, 32, 0.45);
   opacity: 0;
   visibility: hidden;
   transition: all var(--transicao-normal);
@@ -127,21 +130,17 @@
   visibility: visible;
 }
 
-/* ========================================
-   RESPONSIVO
-   ======================================== */
 @media (min-width: 768px) {
   .side-menu {
-    width: 300px;
-    padding: var(--espaco-xl);
+    width: 320px;
+    padding: 1.3rem 1.15rem 1.6rem;
   }
 
   .menu-links a {
-    font-size: 1.1rem;
+    font-size: 1.12rem;
   }
 }
 
-/* Desabilitar menu lateral em desktop grande */
 @media (min-width: 1024px) {
   .side-menu {
     display: none;
