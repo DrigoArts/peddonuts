@@ -1,3 +1,6 @@
+/* ======================================================
+   ESTRUTURA DO CARROSSEL
+   ====================================================== */
 .carrossel {
   position: relative;
   width: 90%;
@@ -16,26 +19,66 @@
   will-change: transform;
 }
 
+/* ======================================================
+   CONFIGURAÇÃO BASE DOS SLIDES
+   ====================================================== */
 .slide {
   min-width: 100%;
   flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--cor-secundaria-1, #f5c896);
-}
-
-.slide img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 7;
-  object-fit: cover;
-  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   user-select: none;
   -webkit-user-drag: none;
 }
 
-/* Botões de Direção */
+/* ======================================================
+   1. VERSÃO MOBILE (Padrão: Telas menores que 768px)
+   Proporção 690x400
+   ====================================================== */
+.slide {
+  aspect-ratio: 690 / 400;
+}
+
+.slide-1 {
+  background-image: url('../img/banner/banner_mobile_1.svg');
+}
+
+.slide-2 {
+  background-image: url('../img/banner/banner_mobile_2.svg');
+}
+
+.slide-3 {
+  background-image: url('../img/banner/banner_mobile_3.svg');
+  
+}
+
+/* ======================================================
+   2. VERSÃO DESKTOP (Telas a partir de 768px)
+   Proporção 1920x1080 (16:9)
+   ====================================================== */
+@media (min-width: 768px) {
+  .slide {
+    aspect-ratio: 16 / 9;
+  }
+
+  .slide-1 {
+    background-image: url('../img/banner/banner_desktop_1.svg');
+  }
+
+  .slide-2 {
+    background-image: url('../img/banner/banner_desktop_2.svg');
+  }
+
+  .slide-3 {
+    background-image: url('../img/banner/banner_desktop_3.svg');
+  }
+}
+
+/* ======================================================
+   BOTÕES DE NAVEGAÇÃO (ANTERIOR / PRÓXIMO)
+   ====================================================== */
 .carrossel-btn {
   position: absolute;
   top: 50%;
@@ -62,10 +105,17 @@
   transform: translateY(-50%) scale(1.08);
 }
 
-.btn-prev { left: 12px; }
-.btn-next { right: 12px; }
+.btn-prev {
+  left: 12px;
+}
 
-/* Indicadores (Dots) */
+.btn-next {
+  right: 12px;
+}
+
+/* ======================================================
+   INDICADORES VISUAIS (DOTS)
+   ====================================================== */
 .carrossel-dots {
   position: absolute;
   bottom: 12px;
@@ -88,20 +138,18 @@
 }
 
 .dot.active {
-  background: #ff4081;
+  background: var(--cor-destaque, #ff4081);
   width: 26px;
   border-radius: 8px;
 }
 
-/* Ajustes Mobile */
+/* ======================================================
+   AJUSTES COMPLEMENTARES MOBILE
+   ====================================================== */
 @media (max-width: 768px) {
   .carrossel {
     width: 94%;
     margin: 1rem auto;
-  }
-
-  .slide img {
-    aspect-ratio: 16 / 9;
   }
 
   .carrossel-btn {
