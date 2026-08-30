@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Ícones e Estilo Principal -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/variable.css">
-    <link rel="stylesheet" href="css/menu_lateral.css">
-    <link rel="stylesheet" href="css/cards.css">
-    <link rel="stylesheet" href="css/account-deletion-modal.css">
 
     <!-- Configurações PWA -->
     <link rel="manifest" href="manifest.json">
@@ -48,6 +44,46 @@
             </button>
         </div>
     </header>
+    
+<!-- BANNER CARROSSEL -->
+<div class="carrossel" id="bannerCarrossel">
+  <div class="container-carrosel" id="carrosselTrack">
+    <!-- Slide 1 -->
+    <div class="slide">
+      <img src="img/banner1.webp" alt="Donuts Especiais e Combos" loading="eager">
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+      <img src="img/banner2.webp" alt="Novos Sabores Recheados" loading="lazy">
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+      <img src="img/banner3.webp" alt="Peça pelo WhatsApp com Entrega Rápida" loading="lazy">
+    </div>
+  </div>
+
+  <!-- Botões de navegação -->
+  <!--<button class="carrossel-btn btn-prev" id="btnPrev" aria-label="Slide anterior">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+  <button class="carrossel-btn btn-next" id="btnNext" aria-label="Próximo slide">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>-->
+
+  <!-- Indicadores (Dots) -->
+  <div class="carrossel-dots" id="carrosselDots">
+    <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
+    <button class="dot" data-slide="1" aria-label="Slide 2"></button>
+    <button class="dot" data-slide="2" aria-label="Slide 3"></button>
+  </div>
+</div>
+
+    <!-- Botões de navegação -->
+    <!--<button class="btn-prev" aria-label="Slide anterior">&#10094;</button>
+    <button class="btn-next" aria-label="Próximo slide">&#10095;</button>
+    </div>-->
 
     <!-- CONTAINER PRINCIPAL DA LOJA -->
     <main class="store-container">

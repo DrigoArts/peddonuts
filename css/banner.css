@@ -1,0 +1,112 @@
+.carrossel {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 1.5rem auto;
+  border-radius: var(--raio-xl, 16px);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  touch-action: pan-y pinch-zoom;
+}
+
+.container-carrosel {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cor-secundaria-1, #f5c896);
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Botões de Direção */
+.carrossel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--cor-neutro-texto-primario, #333);
+  border: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(4px);
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.carrossel-btn:hover {
+  background: #ffffff;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.btn-prev { left: 12px; }
+.btn-next { right: 12px; }
+
+/* Indicadores (Dots) */
+.carrossel-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #ff4081;
+  width: 26px;
+  border-radius: 8px;
+}
+
+/* Ajustes Mobile */
+@media (max-width: 768px) {
+  .carrossel {
+    width: 94%;
+    margin: 1rem auto;
+  }
+
+  .slide img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .carrossel-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 0.85rem;
+  }
+}
