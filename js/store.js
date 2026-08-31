@@ -6,7 +6,6 @@ const detailView = document.getElementById("detail-view");
 const cartView = document.getElementById("cart-view");
 const bannerCarrossel = document.getElementById("bannerCarrossel");
 const cartCounter = document.getElementById("cartCounter");
-const bannerCarrossel = document.getElementById("bannerCarrossel");
 
 const formatCurrency = (val) =>
   val.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
@@ -25,11 +24,14 @@ function toggleHomeBanner(show) {
 async function loadProducts() {
   try {
     const response = await fetch("produtos.json");
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
     products = await response.json();
     renderCatalog();
   } catch (error) {
     console.error("Erro ao carregar produtos:", error);
-    catalogView.innerHTML = "<p>Não foi possível carregar os produtos no momento.</p>";
+    if (catalogView) {
+      catalogView.innerHTML = "<p>Não foi possível carregar os produtos no momento.</p>";
+    }
   }
 }
 
@@ -56,6 +58,8 @@ function navigateStore(view) {
 
 // Renderiza Cards
 function renderCatalog() {
+  if (!catalogView) return;
+
   catalogView.innerHTML = products.map((prod) => `
     <article class="product-card" onclick="openDetails('${prod.id}')">
       <div class="card-img-box">
