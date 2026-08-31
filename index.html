@@ -24,7 +24,7 @@
     <script type="module" src="js/siteConfig.js"></script>
 </head>
 
-<body>
+<body class="home-page">
     <header>
         <div class="logo">
             <img src="img/donuts.svg" alt="P&D_Donuts" class="donuts-texto" onclick="navigateStore('catalog')" style="cursor: pointer;">
@@ -49,28 +49,15 @@
 <div class="carrossel" id="bannerCarrossel">
   <div class="container-carrosel" id="carrosselTrack">
     <!-- Slide 1 -->
-    <div class="slide">
-      <img src="img/banner1.webp" alt="Donuts Especiais e Combos" loading="eager">
-    </div>
+    <div class="slide slide-1" role="img" aria-label="Donuts Especiais e Combos"></div>
 
     <!-- Slide 2 -->
-    <div class="slide">
-      <img src="img/banner2.webp" alt="Novos Sabores Recheados" loading="lazy">
-    </div>
+    <div class="slide slide-2" role="img" aria-label="Novos Sabores Recheados"></div>
 
     <!-- Slide 3 -->
-    <div class="slide">
-      <img src="img/banner3.webp" alt="Peça pelo WhatsApp com Entrega Rápida" loading="lazy">
-    </div>
-  </div>
+    <div class="slide slide-3" role="img" aria-label="Peça pelo WhatsApp com Entrega Rápida"></div>
 
-  <!-- Botões de navegação -->
-  <!--<button class="carrossel-btn btn-prev" id="btnPrev" aria-label="Slide anterior">
-    <i class="fa-solid fa-chevron-left"></i>
-  </button>
-  <button class="carrossel-btn btn-next" id="btnNext" aria-label="Próximo slide">
-    <i class="fa-solid fa-chevron-right"></i>
-  </button>-->
+  </div>
 
   <!-- Indicadores (Dots) -->
   <div class="carrossel-dots" id="carrosselDots">
